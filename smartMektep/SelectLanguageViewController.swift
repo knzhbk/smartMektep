@@ -11,6 +11,8 @@ import UIKit
 class SelectLanguageViewController: UIViewController {
     
     let CHOOSE_LANGUAGE_TEXT = "Выберите язык приложения"
+    let KAZAKH_LANGUAGE_TEXT = "Қазақша"
+    let RUSSIAN_LANGUAGE_TEXT = "Русский"
     
     let logoImageView: UIImageView = {
         let logoImage = UIImageView(image: #imageLiteral(resourceName: "logo_blue"))
@@ -32,7 +34,10 @@ class SelectLanguageViewController: UIViewController {
     }()
     
     let chooseLanguageLabel = UILabel()
-
+    
+    let kazakhLanguageButton = UIButton()
+    
+    let russianLanguageButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +46,8 @@ class SelectLanguageViewController: UIViewController {
         view.addSubview(smartImageView)
         view.addSubview(mektepImageView)
         view.addSubview(chooseLanguageLabel)
+        view.addSubview(kazakhLanguageButton)
+        view.addSubview(russianLanguageButton)
         
         view.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2705882353, blue: 0.6549019608, alpha: 1)
         
@@ -51,6 +58,25 @@ class SelectLanguageViewController: UIViewController {
         chooseLanguageLabel.numberOfLines = 0
         chooseLanguageLabel.lineBreakMode = .byWordWrapping
         
+
+        kazakhLanguageButton.setTitle(KAZAKH_LANGUAGE_TEXT, for: .normal)
+        kazakhLanguageButton.titleLabel!.textAlignment = .left
+        kazakhLanguageButton.titleLabel!.font = UIFont.systemFont(ofSize: 18)
+        kazakhLanguageButton.titleLabel!.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        kazakhLanguageButton.backgroundColor = .clear
+        kazakhLanguageButton.layer.cornerRadius = 4
+        kazakhLanguageButton.layer.borderWidth = 1
+        kazakhLanguageButton.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        russianLanguageButton.setTitle(RUSSIAN_LANGUAGE_TEXT, for: .normal)
+        russianLanguageButton.titleLabel!.textAlignment = .left
+        russianLanguageButton.titleLabel!.font = UIFont.systemFont(ofSize: 18)
+ 
+//        russianLanguageButton.backgroundColor = .white
+        russianLanguageButton.titleLabel?.textColor = .blue
+        russianLanguageButton.layer.cornerRadius = 4
+        russianLanguageButton.layer.borderWidth = 1
+        russianLanguageButton.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         setupLayout()
     }
     
@@ -79,7 +105,20 @@ class SelectLanguageViewController: UIViewController {
         chooseLanguageLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
         chooseLanguageLabel.widthAnchor.constraint(equalToConstant: 311.0).isActive = true
         chooseLanguageLabel .heightAnchor.constraint(equalToConstant: 58.0).isActive = true
-
+        
+        
+        kazakhLanguageButton.translatesAutoresizingMaskIntoConstraints = false
+        kazakhLanguageButton.topAnchor.constraint(equalTo: chooseLanguageLabel.bottomAnchor, constant: 45).isActive = true
+        kazakhLanguageButton.centerXAnchor.constraint(equalTo: chooseLanguageLabel.centerXAnchor).isActive = true
+        kazakhLanguageButton.widthAnchor.constraint(equalToConstant: 141).isActive = true
+        kazakhLanguageButton .heightAnchor.constraint(equalToConstant: 48).isActive = true
+        
+        
+        russianLanguageButton.translatesAutoresizingMaskIntoConstraints = false
+        russianLanguageButton.topAnchor.constraint(equalTo: kazakhLanguageButton.bottomAnchor, constant: 25).isActive = true
+        russianLanguageButton.centerXAnchor.constraint(equalTo: kazakhLanguageButton.centerXAnchor).isActive = true
+        russianLanguageButton.widthAnchor.constraint(equalToConstant: 141).isActive = true
+        russianLanguageButton .heightAnchor.constraint(equalToConstant: 48).isActive = true
     }
 }
 
