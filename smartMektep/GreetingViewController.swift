@@ -51,13 +51,34 @@ class GreetingViewController: UIViewController {
         return button
     }()
     
+    let bottomView: UIView = {
+       let bottomView = UIView()
+        bottomView.backgroundColor = .clear
+//        bottomView.frame = CGRect(x: 0, y: 0, width: 200, height: 80)
+        
+        return bottomView
+    }()
+    
+    private let pageControl: UIPageControl = {
+        let pageControl = UIPageControl()
+        let currentPage = 0
+        pageControl.numberOfPages = 4
+        pageControl.currentPageIndicatorTintColor = #colorLiteral(red: 0.1882352941, green: 0.2705882353, blue: 0.6549019608, alpha: 1)
+        pageControl.pageIndicatorTintColor = #colorLiteral(red: 0.5921568627, green: 0.6588235294, blue: 0.8274509804, alpha: 1)
+        pageControl.frame = CGRect(x: 0, y: 0, width: 30, height: 20)
+        return pageControl
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(scrollImageView)
         view.addSubview(descriptionTextView)
+        view.addSubview(bottomView)
+        bottomView.addSubview(pageControl)
         
         setupLayouts()
         setupButtons()
+        setupPageControl()
     }
     
     func setupLayouts() {
@@ -78,7 +99,6 @@ class GreetingViewController: UIViewController {
         descriptionTextView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 167).isActive = true
         
         
-        topImageContainerView.backgroundColor = .blue
         topImageContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
         topImageContainerView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         topImageContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -88,7 +108,6 @@ class GreetingViewController: UIViewController {
     func setupButtons() {
         view.addSubview(skipButton)
         view.addSubview(nextPageButton)
-        
         skipButton.frame = CGRect(x: 0, y: 0, width: 200, height: 80)
         skipButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         skipButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 46).isActive = true
@@ -99,5 +118,13 @@ class GreetingViewController: UIViewController {
         nextPageButton.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         nextPageButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         nextPageButton.heightAnchor.constraint(equalToConstant: 80.0).isActive = true
+    }
+    
+    func setupPageControl() {
+        bottomView.translatesAutoresizingMaskIntoConstraints = false
+        bottomView.topAnchor.constraint(equalTo:descriptionTextView.topAnchor, constant: 100).isActive = true
+        bottomView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60).isActive = true
+        bottomView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true
+        bottomView.heightAnchor.constraint(equalToConstant: 80.0).isActive = true
     }
 }
