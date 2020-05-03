@@ -65,4 +65,3 @@ class ViewController: UIViewController {
         mektepImageView .heightAnchor.constraint(equalToConstant: 24.6).isActive = true
     }
 }
-
