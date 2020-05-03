@@ -84,6 +84,23 @@ class SelectLanguageViewController: UIViewController {
         nextPageButton.setImage(#imageLiteral(resourceName: "arrow_right"), for: .normal)
         
         setupLayout()
+        
+        nextPageButton.addTarget(self, action: #selector(showNextPage), for:.touchUpInside)
+        kazakhLanguageButton.addTarget(self, action: #selector(selectKazakhLanguage), for:.touchUpInside)
+        russianLanguageButton.addTarget(self, action: #selector(selectRussianLanguage), for:.touchUpInside)
+    }
+    
+    @objc func showNextPage() {
+        let viewController = GreetingViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    @objc func selectKazakhLanguage() {
+        print("KAZ Language selected")
+    }
+    
+    @objc func selectRussianLanguage() {
+        print("RUS Language selected")
     }
     
     func setupLayout() {
