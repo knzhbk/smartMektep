@@ -14,6 +14,9 @@
 		C63C88112458CBF4003556E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C63C880F2458CBF4003556E1 /* LaunchScreen.storyboard */; };
 		C6DC3243245B359300A8B465 /* SelectLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC3242245B359300A8B465 /* SelectLanguageViewController.swift */; };
 		C6DC3245245CAEEF00A8B465 /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC3244245CAEEF00A8B465 /* GreetingViewController.swift */; };
+		C6DC3249246003E000A8B465 /* SwipingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC3248246003E000A8B465 /* SwipingViewController.swift */; };
+		C6DC324B246043D000A8B465 /* SwipingPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC324A246043D000A8B465 /* SwipingPageCell.swift */; };
+		C6DC324D24604CD600A8B465 /* SwipingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC324C24604CD600A8B465 /* SwipingPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		C63C88122458CBF4003556E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6DC3242245B359300A8B465 /* SelectLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLanguageViewController.swift; sourceTree = "<group>"; };
 		C6DC3244245CAEEF00A8B465 /* GreetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
+		C6DC3248246003E000A8B465 /* SwipingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingViewController.swift; sourceTree = "<group>"; };
+		C6DC324A246043D000A8B465 /* SwipingPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingPageCell.swift; sourceTree = "<group>"; };
+		C6DC324C24604CD600A8B465 /* SwipingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,9 @@
 				C63C880D2458CBF4003556E1 /* Assets.xcassets */,
 				C63C880F2458CBF4003556E1 /* LaunchScreen.storyboard */,
 				C63C88122458CBF4003556E1 /* Info.plist */,
+				C6DC3248246003E000A8B465 /* SwipingViewController.swift */,
+				C6DC324A246043D000A8B465 /* SwipingPageCell.swift */,
+				C6DC324C24604CD600A8B465 /* SwipingPage.swift */,
 			);
 			path = smartMektep;
 			sourceTree = "<group>";
@@ -140,11 +149,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6DC324B246043D000A8B465 /* SwipingPageCell.swift in Sources */,
 				C6DC3243245B359300A8B465 /* SelectLanguageViewController.swift in Sources */,
+				C6DC324D24604CD600A8B465 /* SwipingPage.swift in Sources */,
 				C63C88092458CBF1003556E1 /* ViewController.swift in Sources */,
 				C63C88052458CBF1003556E1 /* AppDelegate.swift in Sources */,
 				C6DC3245245CAEEF00A8B465 /* GreetingViewController.swift in Sources */,
 				C63C88072458CBF1003556E1 /* SceneDelegate.swift in Sources */,
+				C6DC3249246003E000A8B465 /* SwipingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

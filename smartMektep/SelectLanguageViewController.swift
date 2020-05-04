@@ -90,9 +90,11 @@ class SelectLanguageViewController: UIViewController {
         russianLanguageButton.addTarget(self, action: #selector(selectRussianLanguage), for:.touchUpInside)
     }
     
-    @objc func showNextPage() {
-        let viewController = GreetingViewController()
-        self.navigationController?.pushViewController(viewController, animated: true)
+    @objc func showNextPage() {        
+        let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
+        layout.scrollDirection = .horizontal
+        let swipingController = SwipingViewController.init(collectionViewLayout: layout)
+        self.navigationController?.pushViewController(swipingController, animated: true)
     }
     
     @objc func selectKazakhLanguage() {
