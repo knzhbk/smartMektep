@@ -74,6 +74,21 @@ class SMSViewController: UIViewController, UITextFieldDelegate {
         return button
     }()
     
+    let sendCodeAgainButton: UIButton = {
+        let button = UIButton(type: .system)
+        
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 14),
+            .foregroundColor: #colorLiteral(red: 0.1882352941, green: 0.2705882353, blue: 0.6549019608, alpha: 1),
+            .underlineStyle: NSUnderlineStyle.single.rawValue]
+        let attributeString = NSMutableAttributedString(string: "Отправить код еще раз (0:59)",
+                                                        attributes: attributes)
+        button.setAttributedTitle(attributeString, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
+    
     let otp1TextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -138,6 +153,7 @@ class SMSViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(backButton)
         view.addSubview(continueButton)
         view.addSubview(textFieldContainer)
+        view.addSubview(sendCodeAgainButton)
         
         self.hideKeyboardWhenTappedAround()
         
@@ -216,6 +232,9 @@ class SMSViewController: UIViewController, UITextFieldDelegate {
         backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32).isActive = true
         backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
         backButton.heightAnchor.constraint(equalToConstant: 48).isActive = true
+        
+        sendCodeAgainButton.topAnchor.constraint(equalTo: textFieldContainer.bottomAnchor, constant: 24).isActive = true
+        sendCodeAgainButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
     func setupTextFields() {
