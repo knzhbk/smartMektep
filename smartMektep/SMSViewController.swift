@@ -188,7 +188,7 @@ class SMSViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func showSignUpViewController() {
-        let viewController = AuthViewController()
+        let viewController = SignUpViewController()
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
