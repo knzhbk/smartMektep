@@ -76,6 +76,58 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         
         return textField
     }()
+    
+    let changeLanguageButton: UIButton = {
+        let button = UIButton(type: .system)
+
+        let attributes: [NSAttributedString.Key: Any] = [
+        .font: UIFont.systemFont(ofSize: 14),
+        .foregroundColor: #colorLiteral(red: 0.1882352941, green: 0.2705882353, blue: 0.6549019608, alpha: 1),
+        .underlineStyle: NSUnderlineStyle.single.rawValue]
+        let attributeString = NSMutableAttributedString(string: "Русский",
+        attributes: attributes)
+        button.setAttributedTitle(attributeString, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
+    
+    let forgetPasswordButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Забыли пароль?", for: .normal)
+        button.titleLabel?.font.withSize(14)
+        button.setTitleColor(#colorLiteral(red: 0.1882352941, green: 0.2705882353, blue: 0.6549019608, alpha: 1), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
+    
+    let enterButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Войти", for: .normal)
+        button.titleLabel?.font.withSize(14)
+        button.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+        button.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2705882353, blue: 0.6549019608, alpha: 1)
+        button.layer.cornerRadius = 4
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
+    
+    let signUpButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Регистрация", for: .normal)
+        button.titleLabel?.font.withSize(14)
+        button.setTitleColor(#colorLiteral(red: 0.1882352941, green: 0.2705882353, blue: 0.6549019608, alpha: 1), for: .normal)
+        button.backgroundColor = .clear
+        button.layer.cornerRadius = 4
+        button.layer.cornerRadius = 4
+        button.layer.borderWidth = 1
+        button.layer.borderColor = #colorLiteral(red: 0.1882352941, green: 0.2705882353, blue: 0.6549019608, alpha: 1)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
         
     
     override func viewDidLoad() {
@@ -91,6 +143,10 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(phoneNumberLabel)
         view.addSubview(passwordLabel)
         view.addSubview(passwordTextField)
+        view.addSubview(forgetPasswordButton)
+        view.addSubview(enterButton)
+        view.addSubview(signUpButton)
+        view.addSubview(changeLanguageButton)
         
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
@@ -121,6 +177,23 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         
         passwordLabel.topAnchor.constraint(equalTo: phoneNumberTextField.bottomAnchor, constant: 42).isActive = true
         passwordLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
+        
+        forgetPasswordButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32).isActive = true
+        forgetPasswordButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 16).isActive = true
+        
+        enterButton.topAnchor.constraint(equalTo: forgetPasswordButton.bottomAnchor, constant: 40).isActive = true
+        enterButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32).isActive = true
+        enterButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
+        enterButton.heightAnchor.constraint(equalToConstant: 48).isActive = true
+        
+        signUpButton.topAnchor.constraint(equalTo: enterButton.bottomAnchor, constant: 16).isActive = true
+        signUpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32).isActive = true
+        signUpButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
+        signUpButton.heightAnchor.constraint(equalToConstant: 48).isActive = true
+        
+        changeLanguageButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32).isActive = true
+        changeLanguageButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -42).isActive = true
+        
     }
 }
 
