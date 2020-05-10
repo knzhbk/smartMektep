@@ -57,6 +57,13 @@ class SwipingViewController: UICollectionViewController, UICollectionViewDelegat
         collectionView.isPagingEnabled = true
         setupButtons()
         setupPageControl()
+        
+        skipButton.addTarget(self, action: #selector(showAuthViewController), for:.touchUpInside)
+    }
+    
+    @objc func showAuthViewController() {
+        let viewController = AuthViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)        
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
