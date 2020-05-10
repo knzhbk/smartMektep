@@ -79,13 +79,13 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
     
     let changeLanguageButton: UIButton = {
         let button = UIButton(type: .system)
-
+        
         let attributes: [NSAttributedString.Key: Any] = [
-        .font: UIFont.systemFont(ofSize: 14),
-        .foregroundColor: #colorLiteral(red: 0.1882352941, green: 0.2705882353, blue: 0.6549019608, alpha: 1),
-        .underlineStyle: NSUnderlineStyle.single.rawValue]
+            .font: UIFont.systemFont(ofSize: 14),
+            .foregroundColor: #colorLiteral(red: 0.1882352941, green: 0.2705882353, blue: 0.6549019608, alpha: 1),
+            .underlineStyle: NSUnderlineStyle.single.rawValue]
         let attributeString = NSMutableAttributedString(string: "Русский",
-        attributes: attributes)
+                                                        attributes: attributes)
         button.setAttributedTitle(attributeString, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         
@@ -128,7 +128,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         
         return button
     }()
-        
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -136,6 +136,8 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         authInfoTextView.textAlignment = .left
         phoneNumberTextField.underlined()
         passwordTextField.underlined()
+        //        passwordTextField.delegate = self
+        phoneNumberTextField.delegate = self
         
         view.addSubview(logoImageView)
         view.addSubview(authInfoTextView)
@@ -193,7 +195,32 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         
         changeLanguageButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32).isActive = true
         changeLanguageButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -42).isActive = true
+    }
+    
+    func formattedNumber(number: String) -> String {
+        let cleanPhoneNumber = number.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+        let mask = "+X (XXX) XXX-XXXX"
         
+        var result = ""
+        var index = cleanPhoneNumber.startIndex
+        for ch in mask where index < cleanPhoneNumber.endIndex {
+            if ch == "X" {
+                result.append(cleanPhoneNumber[index])
+                index = cleanPhoneNumber.index(after: index)
+            } else {
+                result.append(ch)
+            }
+        }
+        
+        return result
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return false }
+        let newString = (text as NSString).replacingCharacters(in: range, with: string)
+        textField.text = formattedNumber(number: newString)
+        
+        return false
     }
 }
 
