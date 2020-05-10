@@ -41,7 +41,7 @@ class SMSViewController: UIViewController, UITextFieldDelegate {
         [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.1882352941, green: 0.2705882353, blue: 0.6549019608, alpha: 1)]
     )
     
-    let SmsCodeSendInfoTextView: UITextView = {
+    let smsCodeSendInfoTextView: UITextView = {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.textAlignment = .left
@@ -145,11 +145,11 @@ class SMSViewController: UIViewController, UITextFieldDelegate {
         attributedCodeSentText.append(NSAttributedString(string:"\n\(phoneNumber)",
                         attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14),
                          NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.1882352941, green: 0.2705882353, blue: 0.6549019608, alpha: 1)]))
-        SmsCodeSendInfoTextView.attributedText = attributedCodeSentText
+        smsCodeSendInfoTextView.attributedText = attributedCodeSentText
         
         view.addSubview(logoImageView)
         view.addSubview(enterSMSCodeTextView)
-        view.addSubview(SmsCodeSendInfoTextView)
+        view.addSubview(smsCodeSendInfoTextView)
         view.addSubview(backButton)
         view.addSubview(continueButton)
         view.addSubview(textFieldContainer)
@@ -220,8 +220,8 @@ class SMSViewController: UIViewController, UITextFieldDelegate {
         enterSMSCodeTextView.topAnchor.constraint(equalTo: logoImageView.topAnchor, constant: 90).isActive = true
         enterSMSCodeTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 33).isActive = true
         
-        SmsCodeSendInfoTextView.topAnchor.constraint(equalTo: enterSMSCodeTextView.bottomAnchor, constant: 16).isActive = true
-        SmsCodeSendInfoTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 33).isActive = true
+        smsCodeSendInfoTextView.topAnchor.constraint(equalTo: enterSMSCodeTextView.bottomAnchor, constant: 16).isActive = true
+        smsCodeSendInfoTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 33).isActive = true
         
         continueButton.bottomAnchor.constraint(equalTo: backButton.topAnchor, constant: 8).isActive = true
         continueButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32).isActive = true
@@ -248,7 +248,7 @@ class SMSViewController: UIViewController, UITextFieldDelegate {
         otp3TextField.underlined()
         otp4TextField.underlined()
 
-        textFieldContainer.topAnchor.constraint(equalTo: SmsCodeSendInfoTextView.bottomAnchor, constant: 72).isActive = true
+        textFieldContainer.topAnchor.constraint(equalTo: smsCodeSendInfoTextView.bottomAnchor, constant: 72).isActive = true
         textFieldContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -85).isActive = true
         textFieldContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 85).isActive = true
         textFieldContainer.heightAnchor.constraint(equalToConstant: 40).isActive = true
