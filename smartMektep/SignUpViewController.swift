@@ -92,11 +92,17 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         setupLayout()
         
         backButton.addTarget(self, action: #selector(showAuthViewController), for:.touchUpInside)
+        retriveCodeButton.addTarget(self, action: #selector(showSMSController), for:.touchUpInside)
 
     }
     
     @objc func showAuthViewController() {
         let viewController = AuthViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    @objc func showSMSController() {
+        let viewController = SMSViewController()
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
