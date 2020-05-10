@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C602C01B24672336000D482E /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C602C01A24672336000D482E /* AuthViewController.swift */; };
+		C602C01D2467DF88000D482E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C602C01C2467DF88000D482E /* SignUpViewController.swift */; };
 		C63C88052458CBF1003556E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C88042458CBF1003556E1 /* AppDelegate.swift */; };
 		C63C88072458CBF1003556E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C88062458CBF1003556E1 /* SceneDelegate.swift */; };
 		C63C88092458CBF1003556E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C88082458CBF1003556E1 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		C602C01A24672336000D482E /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		C602C01C2467DF88000D482E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C63C88012458CBF1003556E1 /* smartMektep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smartMektep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63C88042458CBF1003556E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C63C88062458CBF1003556E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				C6DC324A246043D000A8B465 /* SwipingPageCell.swift */,
 				C6DC324C24604CD600A8B465 /* SwipingPage.swift */,
 				C602C01A24672336000D482E /* AuthViewController.swift */,
+				C602C01C2467DF88000D482E /* SignUpViewController.swift */,
 			);
 			path = smartMektep;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 				C63C88092458CBF1003556E1 /* ViewController.swift in Sources */,
 				C63C88052458CBF1003556E1 /* AppDelegate.swift in Sources */,
 				C63C88072458CBF1003556E1 /* SceneDelegate.swift in Sources */,
+				C602C01D2467DF88000D482E /* SignUpViewController.swift in Sources */,
 				C602C01B24672336000D482E /* AuthViewController.swift in Sources */,
 				C6DC3249246003E000A8B465 /* SwipingViewController.swift in Sources */,
 			);
