@@ -139,6 +139,8 @@ class SMSViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(continueButton)
         view.addSubview(textFieldContainer)
         
+        self.hideKeyboardWhenTappedAround()
+        
         otp1TextField.delegate = self
         otp2TextField.delegate = self
         otp3TextField.delegate = self
@@ -262,5 +264,17 @@ class SMSViewController: UIViewController, UITextFieldDelegate {
       let characterSet = CharacterSet(charactersIn: string)
         
       return allowedCharacters.isSuperset(of: characterSet)
+    }
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

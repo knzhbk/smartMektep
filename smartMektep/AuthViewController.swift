@@ -150,6 +150,8 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(signUpButton)
         view.addSubview(changeLanguageButton)
         
+        self.hideKeyboardWhenTappedAround()
+        
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         setupLayout()

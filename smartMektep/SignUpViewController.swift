@@ -79,6 +79,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         phoneNumberTextField.underlined()
         phoneNumberTextField.delegate = self
         authInfoTextView.attributedText = attributedText
+        self.hideKeyboardWhenTappedAround()
         
         view.addSubview(logoImageView)
         view.addSubview(authInfoTextView)
