@@ -51,7 +51,7 @@ class SMSViewController: UIViewController, UITextFieldDelegate {
         return textView
     }()
     
-    let continueButton: UIButton = {
+    let nextButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Далее", for: .normal)
         button.titleLabel?.font.withSize(14)
@@ -151,7 +151,7 @@ class SMSViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(enterSMSCodeTextView)
         view.addSubview(smsCodeSendInfoTextView)
         view.addSubview(backButton)
-        view.addSubview(continueButton)
+        view.addSubview(nextButton)
         view.addSubview(textFieldContainer)
         view.addSubview(sendCodeAgainButton)
         
@@ -171,6 +171,7 @@ class SMSViewController: UIViewController, UITextFieldDelegate {
         setupTextFields()
         
         backButton.addTarget(self, action: #selector(showSignUpViewController), for:.touchUpInside)
+        nextButton.addTarget(self, action: #selector(showPasswordViewController), for:.touchUpInside)
     }
     
     @objc func otpTextFieldDidChange(textField: UITextField) {
@@ -210,6 +211,11 @@ class SMSViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
+    @objc func showPasswordViewController() {
+        let viewController = PasswordViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     func setupLayout() {
         logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 95).isActive = true
         logoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 44).isActive = true
@@ -223,10 +229,10 @@ class SMSViewController: UIViewController, UITextFieldDelegate {
         smsCodeSendInfoTextView.topAnchor.constraint(equalTo: enterSMSCodeTextView.bottomAnchor, constant: 16).isActive = true
         smsCodeSendInfoTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 33).isActive = true
         
-        continueButton.bottomAnchor.constraint(equalTo: backButton.topAnchor, constant: 8).isActive = true
-        continueButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32).isActive = true
-        continueButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
-        continueButton.heightAnchor.constraint(equalToConstant: 48).isActive = true
+        nextButton.bottomAnchor.constraint(equalTo: backButton.topAnchor, constant: 8).isActive = true
+        nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32).isActive = true
+        nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
+        nextButton.heightAnchor.constraint(equalToConstant: 48).isActive = true
         
         backButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
         backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32).isActive = true
