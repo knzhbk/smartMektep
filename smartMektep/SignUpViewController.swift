@@ -90,6 +90,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         setupLayout()
+        
+        backButton.addTarget(self, action: #selector(showAuthViewController), for:.touchUpInside)
+
+    }
+    
+    @objc func showAuthViewController() {
+        let viewController = AuthViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     func setupLayout() {
