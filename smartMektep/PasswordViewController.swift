@@ -156,6 +156,8 @@ class PasswordViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func showIDController() {
+        let viewController = IdNumberViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     func setupLayout() {
