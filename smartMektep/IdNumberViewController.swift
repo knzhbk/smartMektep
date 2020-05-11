@@ -265,8 +265,8 @@ class IdNumberViewController: UIViewController, UITextFieldDelegate {
         setupLayout()
         setupTextFields()
         
-        backButton.addTarget(self, action: #selector(showSignUpViewController), for:.touchUpInside)
-        nextButton.addTarget(self, action: #selector(showPasswordViewController), for:.touchUpInside)
+        backButton.addTarget(self, action: #selector(showPasswordViewController), for:.touchUpInside)
+        nextButton.addTarget(self, action: #selector(showIdConformationViewController), for:.touchUpInside)
     }
     
     @objc func otpTextFieldDidChange(textField: UITextField) {
@@ -333,8 +333,8 @@ class IdNumberViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @objc func showSignUpViewController() {
-        let viewController = SignUpViewController()
+    @objc func showIdConformationViewController() {
+        let viewController = IdentityConformationViewController()
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     

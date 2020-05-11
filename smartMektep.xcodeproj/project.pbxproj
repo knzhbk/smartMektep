@@ -12,6 +12,7 @@
 		C602C01F2467E581000D482E /* SMSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C602C01E2467E581000D482E /* SMSViewController.swift */; };
 		C602C02124688204000D482E /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C602C02024688203000D482E /* PasswordViewController.swift */; };
 		C602C023246939AC000D482E /* IdNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C602C022246939AC000D482E /* IdNumberViewController.swift */; };
+		C602C02524694229000D482E /* IdentityConformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C602C02424694229000D482E /* IdentityConformationViewController.swift */; };
 		C63C88052458CBF1003556E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C88042458CBF1003556E1 /* AppDelegate.swift */; };
 		C63C88072458CBF1003556E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C88062458CBF1003556E1 /* SceneDelegate.swift */; };
 		C63C88092458CBF1003556E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C88082458CBF1003556E1 /* ViewController.swift */; };
@@ -29,6 +30,7 @@
 		C602C01E2467E581000D482E /* SMSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSViewController.swift; sourceTree = "<group>"; };
 		C602C02024688203000D482E /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		C602C022246939AC000D482E /* IdNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdNumberViewController.swift; sourceTree = "<group>"; };
+		C602C02424694229000D482E /* IdentityConformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityConformationViewController.swift; sourceTree = "<group>"; };
 		C63C88012458CBF1003556E1 /* smartMektep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smartMektep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63C88042458CBF1003556E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C63C88062458CBF1003556E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				C602C01E2467E581000D482E /* SMSViewController.swift */,
 				C602C02024688203000D482E /* PasswordViewController.swift */,
 				C602C022246939AC000D482E /* IdNumberViewController.swift */,
+				C602C02424694229000D482E /* IdentityConformationViewController.swift */,
 			);
 			path = smartMektep;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				C602C023246939AC000D482E /* IdNumberViewController.swift in Sources */,
 				C6DC324B246043D000A8B465 /* SwipingPageCell.swift in Sources */,
 				C6DC3243245B359300A8B465 /* SelectLanguageViewController.swift in Sources */,
+				C602C02524694229000D482E /* IdentityConformationViewController.swift in Sources */,
 				C6DC324D24604CD600A8B465 /* SwipingPage.swift in Sources */,
 				C602C02124688204000D482E /* PasswordViewController.swift in Sources */,
 				C63C88092458CBF1003556E1 /* ViewController.swift in Sources */,
